@@ -16,10 +16,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v2
-        with:
-          vs-version: '[16.4,16.5)'
-      
+        uses: microsoft/setup-msbuild@v2    
       - name: "Checkout openssl"
         uses: "actions/checkout@v5"
         with:

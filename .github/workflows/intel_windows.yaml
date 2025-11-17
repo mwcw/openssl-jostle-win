@@ -29,6 +29,6 @@ jobs:
         working-directory: "openssl"
         run: |
           perl Configure --prefix="${{ github.workspace }}\openssl\dist"
-          dir C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
           nmake 
           nmake install_sw

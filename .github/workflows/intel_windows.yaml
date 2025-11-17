@@ -15,6 +15,9 @@ jobs:
         runner: ["windows-latest"]
     runs-on: ${{ matrix.runner }}
     steps:
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
+      
       - name: "Checkout openssl"
         uses: "actions/checkout@v5"
         with:
@@ -22,6 +25,7 @@ jobs:
           ref: "openssl-3.6"
           persist-credentials: false
           path: "openssl"
+      
       - name: "Build openssl"
         working-directory: "openssl"
         run: |
